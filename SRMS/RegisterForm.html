@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="assets/css/style1.css" />
+</head>
+<body>
+    <div class="left-section">
+        <div class="register-container">
+            <h2>Register</h2>
+            <form action="UserInsert.php" method="POST" id="form">
+                <div class="input-container">
+                    <img src="assets/images/userimage.png" alt="Name Icon">
+                    <input type="text" id="txtname" name="name" placeholder="Name" required>
+                  </div>
+                  <div><span class="error-msg" id="nameFieldMsg"></span></div>
+                 
+                <div class="input-container">
+                    <img src="assets/images/usertype.png" alt="User Type Icon">
+                    <select id="selectusertype" name="usertype" >
+                        <option value="" disabled selected>User Type</option>
+                        <option value="lecturer">Lecturer</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                </div>
+                  <div><span class="error-msg" id="typeFieldMsg"></span></div>
+                
+                <div class="input-container">
+                    <img src="assets/images/803_lock.jpg" alt="Username Icon">
+                    <input type="text" id="txtusername" name="username" placeholder="Username" required>
+                </div>
+                <span class="error-msg" id="usernameFieldMsg"></span>
+                <div class="input-container">
+                    <img src="assets/images/key.jpg" alt="Password Icon">
+                    <input type="password1" id="txtpassword1" name="password1" placeholder="Password" required>
+                </div>
+                <div><span class="error-msg" id="pwFieldMsg1"></span></div>
+                <div class="input-container">
+                    <img src="assets/images/key.jpg" alt="Password Icon">
+                    <input type="password2" id="txtpassword2" name="password2" placeholder="Re Enter the Password" required>
+                 </div>
+                <div><span class="error-msg" id="pwFieldMsg2"></span></div>
+                <button type="submit">Register</button>
+            </form>
+            <div class="login-link">
+                <a href="LoginForm.html">Login</a>
+            </div>
+        </div>
+    </div>
+    <div class="right-section">
+        <div class="system-name">SRMS</div>
+        <div class="system-logo">
+            <img src="assets/images/Education-Logo.png" alt="System Logo">
+        </div>
+        <div class="system-subname">Student Result Management System</div>
+    </div>
+</body>
+    <script type="text/javaScript">
+        
+            // Get the values from the form inputs
+            const txtname = document.getElementById('txtname');
+            const selectusertype = document.getElementById('selectusertype');
+            const txtusername = document.getElementById('txtusername');
+            const txtpassword1 = document.getElementById('txtpassword1');
+            const txtpassword2 = document.getElementById('txtpassword2');
+
+            const nameFieldMsg = document.getElementById('nameFieldMsg');
+            const typeFieldMsg = document.getElementById('typeFieldMsg');
+            const usernameFieldMsg = document.getElementById('usernameFieldMsg');
+            const pwFieldMsg1 = document.getElementById('pwFieldMsg1');
+            const pwFieldMsg2 = document.getElementById('pwFieldMsg2');
+
+            function validateName() {
+                const name = txtname.value.trim();
+                const crit1 = name !="";
+                const crit2 = name.length >= 3;
+            if(!crit1){
+                nameFieldMsg.innerHTML = "Name is required";
+                return false;
+            }
+            if(!crit2){
+                nameFieldMsg.innerHTML = "Name should has at lease 3 characters";
+                return false;
+            }
+            else{
+                nameFieldMsg.innerHTML = "";
+                return true;
+            }
+            }
+
+            function validateUserType() {
+                const usertype = selectusertype.value;
+                const crit1 = usertype !="";
+                if (!crit1) {
+                    typeFieldMsg.innerHTML = "User Type is required";
+                    return false;
+                } else {
+                    typeFieldMsg.innerHTML = "";
+                    return true;
+                }
+            }
+
+            function validateUsername() {
+                const username = txtusername.value.trim();
+                const crti1 = username != "";
+                const crti2 = username.length >= 3;
+                if (!crti1) {
+                    usernameFieldMsg.innerHTML = "Username is required";
+                    return false;
+                }if (!crti2) {
+                    usernameFieldMsg.innerHTML = "Username should have at least 3 characters";
+                    return false;
+                } else {
+                    usernameFieldMsg.innerHTML = "";
+                    return true;
+                }
+            }
+
+            function validatePassword1() {
+                const password1 = txtpassword1.value.trim();
+                const crti1 = password1 != "";
+                const crit2 = password1.length >= 4;
+                if (!crti1) {
+                    pwFieldMsg1.innerHTML = "Password is required";
+                    return false;
+                }if (!crit2) {
+                    pwFieldMsg1.innerHTML = "Password should have at least 4 characters";
+                    return false;
+                } else {
+                    pwFieldMsg1.innerHTML = "";
+                    return true;
+                }
+            }
+            function passwordEqual(){
+                const password1 = txtpassword1.value.trim();
+                const password2 = txtpassword2.value.trim();
+
+                if (password1 != password2){
+                    pwFieldMsg1.innerHTML = "Not Equal, ReEnter!";
+                    return false;
+                }
+                else{
+                    pwFieldMsg2.innerHTML = "";
+                    return true;
+                }
+            }
+
+
+            form.addEventListener('submit', function(e){
+
+        const nameValidity = validateName();
+        const typeValidity = validateUserType();
+        const usernameValidity = validateUsername();
+        const pw1Validity = validatePassword1();
+        const pw2Validity = passwordEqual();
+
+if(!nameValidity || !typeValidity || !usernameValidity || !pw1Validity || !pw2Validity) e.preventDefault();
+});
+
+
+
+           
+    </script>
+    <style type="text/css">
+        .error-msg{
+            color: #e60e0e;
+            font-size: 15px;
+        }
+
+        
+    </style>
+
+</html>

@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+        .head-section {
+    width: 97.90%;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: rgb(6,178,233);
+    background: linear-gradient(90deg, rgba(6,178,233,1) 22%, rgba(71,9,121,1) 63%, rgba(13,17,1,1) 100%);
+}
+       .container-image {
+            width: 99%;
+            height: 99%;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+        }
+        .container {
+            max-width: 800px;
+            height: 450px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            background-color: rgb(148, 170, 199);
+            margin-top: 100px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .myUpdateBtn
+         {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color:  rgb(3, 66, 3);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .myUpdateBtn:hover {
+            background-color: rgb(7, 112, 51);
+        }
+        .system-name {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 20px;
+
+}
+.system-subname{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px 0;
+    flex-grow: 1;
+    text-align: center;
+}
+.system-logo {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    padding: 10px;
+}
+.system-logo img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.logout-button {
+    width: 7%;
+    padding: 10px;
+    background-color: rgba(6,178,233,1);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.logout-button:hover {
+background-color: #0056b3;
+}
+ .myDeleteBtn{
+    text-align: center;
+    display: inline-block;
+    background-color: #800;
+    color : white;
+    padding: 4px 8px;
+    text-decoration : none;
+    font-family: calibri , sans-serif;
+    border-radius: 5px;
+    width: 50px;
+    
+ }
+
+ .myDeleteBtn:hover{
+     background-color: #a00;
+ } 
+ .myDetailBtn{
+    text-align: center;
+    display: inline-block;
+    background-color: #008;
+    color : white;
+    padding: 4px 8px;
+    text-decoration : none;
+    font-family: calibri , sans-serif;
+    border-radius: 5px;
+    width: 50px;
+ }
+
+ .myDetailBtn:hover{
+    background-color: #00a;
+ }
+
+ .addbutton{
+    text-align: center;
+    display: inline-block;
+    background-color:  rgba(6,178,233,1);
+    color : white;
+    padding: 4px 8px;
+    text-decoration : none;
+    font-family: calibri , sans-serif;
+    border-radius: 5px;
+    width: 50px;
+ }
+
+ .addbutton:hover{
+    background-color: #0056b3;
+ }
+ .buttonContainer {
+            text-align: center; /* Center the content */
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+
+ 

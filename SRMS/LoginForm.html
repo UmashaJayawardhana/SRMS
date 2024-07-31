@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="assets/css/style1.css" />
+</head>
+
+<body>
+    <div class="left-section">
+        <div class="login-container">
+            <h2>Member Login</h2>
+            <form id="lgform" action="Login.php" method="post">
+                <div class="input-container">
+                    <img src="assets/images/userimage.png" alt="Username Icon">
+                    <i class="fa fa-user-circle"></i>
+                    <input type="text" id="txtusername" name="username" placeholder="Username" required>
+                </div>
+                <div><span class="error-msg" id="pwFieldMsg2"></span></div>
+                <div class="input-container">
+                    <img src="assets/images/803_lock.jpg" alt="Password Icon">
+                    <input type="password" id="txtpassword" name="password" placeholder="Password" required>
+                </div>
+                <div><span class="error-msg" id="pwFieldMsg"></span></div>
+                <button type="submit">Login</button>
+            </form>
+            <div class="register-link">
+                <a href="RegisterForm.html">New user? Register here</a>
+            </div>
+        </div>
+    </div>
+    <div class="right-section">
+        <div class="system-name">SRMS</div>
+        <div class="system-logo">
+            <img src="assets/images/Education-Logo.png" alt="System Logo">
+        </div>
+        <div class="system-subname">Student Result Management System</div>
+    </div>
+</body>
+<script type="text/javaScript">
+
+        const username = document.getElementById('txtusername');
+        const password = document.getElementById('txtpassword');
+        const usernameFieldMsg = document.getElementById('usernameFieldMsg');
+        const pwFieldMsg1 = document.getElementById('pwFieldMsg');
+
+        //Validate Username
+        function validateUsername() {
+                const username = txtusername.value.trim();
+                const crti1 = username != "";
+                if (!crti1) {
+                    usernameFieldMsg.innerHTML = "Username is required";
+                    return false;
+                
+                } else {
+                    usernameFieldMsg.innerHTML = "";
+                    return true;
+                }
+            }
+        
+        //Validate Password
+            function validatePassword() {
+                const password1 = txtpassword1.value.trim();
+                const crti1 = password1 != "";
+                if (!crti1) {
+                    pwFieldMsg1.innerHTML = "Password is required";
+                    return false;
+                } else {
+                    pwFieldMsg1.innerHTML = "";
+                    return true;
+                }
+            }
+            lgform.addEventListener('submit', function(e){
+
+            const usernameValidity = validateUsername();
+            const pwValidity = validatePassword();
+
+if( !usernameValidity || !pwValidity) e.preventDefault();
+});
+
+
+    </script>
+<style type="text/css">
+    .error-msg {
+        color: #e60e0e;
+        font-size: 15px;
+    }
+</style>
+
+</html>
